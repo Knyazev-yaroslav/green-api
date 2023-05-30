@@ -1,6 +1,6 @@
-# Чат
+# Gользовательский интерфейс для отправки и получений сообщений WhatsApp
 
-# _Тестовое задание на должность Front-end (React) разработчик_
+# _Тестовое задание на должность "Фронтенд разработчик React"_
 
 ![demo](https://github.com/Knyazev-yaroslav/green-api/blob/master/screenshots/Chat_demo.png)
 
