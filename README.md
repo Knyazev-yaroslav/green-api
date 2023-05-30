@@ -2,7 +2,7 @@
 
 # _Тестовое задание на должность Front-end (React) разработчик_
 
-![demo](https://github.com/Knyazev-yaroslav/chat/blob/main/chat.png)
+![demo](https://github.com/Knyazev-yaroslav/green-api/blob/master/screenshots/Chat_demo.png)
 
 ## Запуск приложения:
 
