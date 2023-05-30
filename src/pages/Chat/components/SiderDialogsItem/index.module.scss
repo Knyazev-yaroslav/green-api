@@ -1,0 +1,40 @@
+.item__container{
+  display: flex;
+  flex-direction: column;
+
+
+  width: 100%;
+  height: 56px;
+  border-bottom: 1px solid rgb(201, 201, 201);
+  justify-content: space-between;
+  &:hover{
+    background-color: rgb(235, 235, 235);
+  }
+}
+.item__user__info{
+  margin-top: 4px;
+  margin-left: 16px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.item__user__message{
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: space-between;
+  padding: 0px 15px;
+  margin-bottom: 4px;
+}
+
+.item__user__message__text{
+  font-size: 14px;
+  color: grey;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+}
+
+.item__user__message__time{
+  font-size: 12px;
+}

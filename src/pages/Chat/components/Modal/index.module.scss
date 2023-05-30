@@ -1,0 +1,37 @@
+.portal_wrapper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(125, 125, 125, 0.5);
+}
+
+.portal_container{
+  min-width: 666px;
+  min-height: 272px;
+  position: relative;
+  background-color: white;
+  padding: 16px 24px;
+  border-radius: 15px;
+}
+
+.close_modal_button{
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: 0;
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.5;
+
+  &:hover{
+    opacity: 0.8;
+  }
+}
