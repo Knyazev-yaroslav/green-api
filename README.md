@@ -19,7 +19,10 @@ npm start
 
 ![correct settings](https://github.com/Knyazev-yaroslav/green-api/blob/master/screenshots/Correct_settings_demo.png)
 
-После запуска вам необходимо ввести ваши IdInstance и ApiTokenInstance из личного кабинета Green-api. Данные сохраняются в localStorage, при повторном запуске не придется их вводить еще раз.
+После запуска вам необходимо ввести ваши IdInstance и ApiTokenInstance из личного кабинета Green-api. 
+
+![login demo](https://github.com/Knyazev-yaroslav/green-api/blob/master/screenshots/Instance.png)
+Данные сохраняются в localStorage, при повторном запуске не придется их вводить еще раз.
 
 ![login demo](https://github.com/Knyazev-yaroslav/green-api/blob/master/screenshots/Login_page.png)
 
