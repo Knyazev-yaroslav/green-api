@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 import styles from "./index.module.scss";
 import { useAppDispatch, useAppSelector } from "../../../../hooks/redux";
 import { sendMessageAction } from "../../../../store/chat/thunk";
@@ -13,11 +13,14 @@ interface IChatBlock {
 
 const ChatBlock: FC<IChatBlock> = ({ phoneNumber }) => {
   const [messageText, setMessageText] = useState<string>("");
+  const chatFieldRef = useRef<null | HTMLDivElement>(null);
 
   const dispatch = useAppDispatch();
 
   const { newNotification, successfulSending, dialogs } =
     useAppSelector(getChatData);
+
+  const currentMessages = dialogs[phoneNumber]?.messages;
 
   const handleSendMessage = () => {
     dispatch(
@@ -50,9 +53,16 @@ const ChatBlock: FC<IChatBlock> = ({ phoneNumber }) => {
     }
   }, [phoneNumber]);
 
+  useEffect(() => {
+    if (chatFieldRef.current) {
+      chatFieldRef.current.scrollTo(0, chatFieldRef.current.scrollHeight);
+    }
+  }, [currentMessages]);
+
   const chatMessages = dialogs[phoneNumber]?.messages.map((element, index) => {
     return (
       <Message
+        key={index + element.messageDate}
         myMessage={element.myMessage}
         messageText={element.messageText}
         messageDate={element.messageDate}
@@ -72,10 +82,14 @@ const ChatBlock: FC<IChatBlock> = ({ phoneNumber }) => {
         <p className={styles.chat_block__header__phone}>(+{phoneNumber})</p>
       </div>
       <div className={styles.chat__block__body}>
-        <div className={styles.chat__field__container}>{chatMessages}</div>
+        <div ref={chatFieldRef} className={styles.chat__filed__wrapper}>
+          <div className={styles.chat__field__container}>{chatMessages}</div>
+        </div>
+
         <div className={styles.chat__block__footer}>
           <input
             className={styles.chat__block__footer__input}
+            autoFocus
             type="text"
             placeholder="Введите сообщение"
             value={messageText}

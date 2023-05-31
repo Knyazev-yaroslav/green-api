@@ -56,6 +56,7 @@ const NewChatModalBody: FC<INewChatModalBody> = ({
         <input
           className={styles.new_chat__input}
           required
+          autoFocus
           type="tel"
           placeholder="XXXXXXXXXX"
           onChange={(event) => inputHandler(event.target.value)}
@@ -114,10 +115,6 @@ const Chat: FC = () => {
   };
 
   useEffect(() => {
-    if (newNotification) {
-      setPhoneNumber(newNotification.senderData.chatId.substring(0, 11));
-    }
-
     const fetchingNotifications = setInterval(() => getMessages(), 1000);
 
     return () => {
@@ -150,9 +147,19 @@ const Chat: FC = () => {
           >
             Новый чат
           </button>
-          {Object.values(siderDialogs)}
+          <div className={styles.sider_dialogs_wrapper}>
+            <div className={styles.sider_dialogs}>
+              {Object.values(siderDialogs)}
+            </div>
+          </div>
         </div>
-        {phoneNumber && <ChatBlock phoneNumber={phoneNumber} />}
+        {phoneNumber ? (
+          <ChatBlock phoneNumber={phoneNumber} />
+        ) : (
+          <div className={styles.stub__container}>
+            <p className={styles.stub__text}>Выберите или создайте чат</p>
+          </div>
+        )}
       </div>
       <Modal setModalOpen={setModalOpen} modalOpen={modalOpen}>
         <NewChatModalBody

@@ -20,6 +20,7 @@
 
 .send_message{
   width: 25%;
+  border-right: 1px solid rgb(200, 200, 200);
 }
 
 .new_chat{
@@ -76,6 +77,29 @@
   font-size: 18px;
   left: 12px;
   top: 14px;
+}
+
+.sider_dialogs__wrapper{
+  overflow-y: auto;
+  height: 800px;
+}
+
+.sider_dialogs{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.stub__container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+}
+
+.stub__text{
+  font-size: 30px;
+  font-weight: 400;
 }
 
 .new_chat__button{
